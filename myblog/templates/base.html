@@ -1,0 +1,30 @@
+{% load static %}
+{% load blog_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="{% static 'css/foundation-float.css' %}">
+</head>
+<body>
+    <div class="row">
+        <header class="large-12 columns">
+            <h1>Welcome to My Blog</h1>
+            <hr>
+        </header>
+    </div>
+
+    <div class="row">
+        <div class="large-8 columns">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="large-4 columns">
+            <h3>About Me</h3>
+            <p>I'm a Python and Django dev.</p>
+            <h3>Recent Entries</h3>
+            {% entry_history %}
+        </div>
+    </div>
+</body>
+</html>
